@@ -1,0 +1,19 @@
+{
+  "name": "yt-ad-skipper",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Soukromý doplněk pro Firefox (desktop i Android), který přeskakuje reklamy ve videích na YouTube.",
+  "scripts": {
+    "test": "node test/content.test.js",
+    "lint": "web-ext lint --source-dir src",
+    "check": "npm run lint && npm test",
+    "build": "web-ext build --source-dir src --artifacts-dir dist --overwrite-dest",
+    "start": "web-ext run --source-dir src --start-url https://www.youtube.com",
+    "start:android": "web-ext run --source-dir src --target firefox-android",
+    "sign": "web-ext sign --source-dir src --artifacts-dir dist --channel unlisted"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0",
+    "web-ext": "^8.0.0"
+  }
+}
